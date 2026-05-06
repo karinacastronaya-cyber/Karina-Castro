@@ -1397,7 +1397,7 @@
       <img class="portfolio-thumb" id="img-0" src="" alt="" style="display:none;">
       <div class="portfolio-overlay">
         <p class="portfolio-cat" id="cat-display-0">Branding</p>
-        <p class="portfolio-name" id="name-display-0">Nombre del proyecto</p>
+        <p class="portfolio-name" id="name-display-0"></p>
       </div>
       <span class="edit-badge">✎ Cambiar</span>
     </div>
@@ -1414,7 +1414,7 @@
       <img class="portfolio-thumb" id="img-1" src="" alt="" style="display:none;">
       <div class="portfolio-overlay">
         <p class="portfolio-cat" id="cat-display-1">Packaging</p>
-        <p class="portfolio-name" id="name-display-1">Nombre del proyecto</p>
+        <p class="portfolio-name" id="name-display-1"></p>
       </div>
       <span class="edit-badge">✎ Cambiar</span>
     </div>
@@ -1431,7 +1431,7 @@
       <img class="portfolio-thumb" id="img-2" src="" alt="" style="display:none;">
       <div class="portfolio-overlay">
         <p class="portfolio-cat" id="cat-display-2">Amazon</p>
-        <p class="portfolio-name" id="name-display-2">Nombre del proyecto</p>
+        <p class="portfolio-name" id="name-display-2"></p>
       </div>
       <span class="edit-badge">✎ Cambiar</span>
     </div>
@@ -1448,7 +1448,7 @@
       <img class="portfolio-thumb" id="img-3" src="" alt="" style="display:none;">
       <div class="portfolio-overlay">
         <p class="portfolio-cat" id="cat-display-3">Imagen Visual</p>
-        <p class="portfolio-name" id="name-display-3">Nombre del proyecto</p>
+        <p class="portfolio-name" id="name-display-3"></p>
       </div>
       <span class="edit-badge">✎ Cambiar</span>
     </div>
@@ -1465,7 +1465,7 @@
       <img class="portfolio-thumb" id="img-4" src="" alt="" style="display:none;">
       <div class="portfolio-overlay">
         <p class="portfolio-cat" id="cat-display-4">Branding</p>
-        <p class="portfolio-name" id="name-display-4">Nombre del proyecto</p>
+        <p class="portfolio-name" id="name-display-4"></p>
       </div>
       <span class="edit-badge">✎ Cambiar</span>
     </div>
@@ -1482,7 +1482,7 @@
       <img class="portfolio-thumb" id="img-5" src="" alt="" style="display:none;">
       <div class="portfolio-overlay">
         <p class="portfolio-cat" id="cat-display-5">Amazon</p>
-        <p class="portfolio-name" id="name-display-5">Nombre del proyecto</p>
+        <p class="portfolio-name" id="name-display-5"></p>
       </div>
       <span class="edit-badge">✎ Cambiar</span>
     </div>
@@ -1499,7 +1499,7 @@
       <img class="portfolio-thumb" id="img-6" src="" alt="" style="display:none;">
       <div class="portfolio-overlay">
         <p class="portfolio-cat" id="cat-display-6">Packaging</p>
-        <p class="portfolio-name" id="name-display-6">Nombre del proyecto</p>
+        <p class="portfolio-name" id="name-display-6"></p>
       </div>
       <span class="edit-badge">✎ Cambiar</span>
     </div>
@@ -1516,7 +1516,7 @@
       <img class="portfolio-thumb" id="img-7" src="" alt="" style="display:none;">
       <div class="portfolio-overlay">
         <p class="portfolio-cat" id="cat-display-7">Imagen Visual</p>
-        <p class="portfolio-name" id="name-display-7">Nombre del proyecto</p>
+        <p class="portfolio-name" id="name-display-7"></p>
       </div>
       <span class="edit-badge">✎ Cambiar</span>
     </div>
@@ -1533,7 +1533,7 @@
       <img class="portfolio-thumb" id="img-8" src="" alt="" style="display:none;">
       <div class="portfolio-overlay">
         <p class="portfolio-cat" id="cat-display-8">Amazon A+</p>
-        <p class="portfolio-name" id="name-display-8">Nombre del proyecto</p>
+        <p class="portfolio-name" id="name-display-8"></p>
       </div>
       <span class="edit-badge">✎ Cambiar</span>
     </div>
@@ -1650,9 +1650,7 @@
 <script>
   // ── PORTFOLIO ──
   const portfolioData = Array.from({length: 9}, (_, i) => ({
-    name: ['Nombre del proyecto','Nombre del proyecto','Nombre del proyecto',
-           'Nombre del proyecto','Nombre del proyecto','Nombre del proyecto',
-           'Nombre del proyecto','Nombre del proyecto','Nombre del proyecto'][i],
+    name: ['','','','','','','','',''][i],
     cat:  ['branding','packaging','amazon','imagen','branding','amazon','packaging','imagen','amazon'][i],
     catLabel: ['Branding','Packaging','Amazon','Imagen Visual','Branding','Amazon','Packaging','Imagen Visual','Amazon A+'][i],
     img: ''
@@ -1693,7 +1691,7 @@
       card.style.cssText = 'border:1px solid var(--rule); padding:1rem; display:flex; flex-direction:column; gap:0.5rem; background:var(--white);';
       card.innerHTML = `
         <p style="font-family:var(--ff-mono);font-size:0.6rem;letter-spacing:0.15em;text-transform:uppercase;color:var(--muted);">Proyecto ${i+1}</p>
-        <input class="info-input" id="edit-name-${i}" value="${p.name}" placeholder="Nombre del proyecto" oninput="portfolioData[${i}].name=this.value;document.getElementById('name-display-${i}').textContent=this.value">
+        <input class="info-input" id="edit-name-${i}" value="${p.name}" placeholder="Nombre del proyecto (opcional)" oninput="portfolioData[${i}].name=this.value;document.getElementById('name-display-${i}').textContent=this.value">
         <select class="info-input" id="edit-cat-${i}" onchange="updateCat(${i}, this.value)">
           <option value="branding" ${p.cat==='branding'?'selected':''}>Branding</option>
           <option value="packaging" ${p.cat==='packaging'?'selected':''}>Packaging</option>
