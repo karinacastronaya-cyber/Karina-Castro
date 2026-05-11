@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="es" id="html-root">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -1280,6 +1280,23 @@
     /* Edit panel */
     #editInfoList { grid-template-columns: 1fr !important; }
   }
+
+  /* ── LANGUAGE TOGGLE ── */
+  .lang-toggle {
+    font-family: var(--ff-body);
+    font-size: 0.72rem;
+    letter-spacing: 0.1em;
+    font-weight: 500;
+    border: 1px solid var(--rule);
+    background: transparent;
+    color: var(--muted);
+    padding: 0.4rem 0.8rem;
+    cursor: pointer;
+    transition: all 0.2s;
+    margin-left: 0.8rem;
+  }
+  .lang-toggle:hover { border-color: var(--ink); color: var(--ink); }
+  .lang-toggle.active-en { background: var(--ink); color: var(--white); border-color: var(--ink); }
 </style>
 </head>
 <body>
@@ -1288,24 +1305,25 @@
 <nav>
   <a href="#" class="nav-logo">Karina Castro</a>
   <ul class="nav-links">
-    <li><a href="#servicios">Servicios</a></li>
-    <li><a href="#portafolio">Portafolio</a></li>
-    <li><a href="#proceso">Proceso</a></li>
-    <li><a href="#sobre-mi">Sobre mí</a></li>
+    <li><a href="#servicios" data-es="Servicios" data-en="Services">Servicios</a></li>
+    <li><a href="#portafolio" data-es="Portafolio" data-en="Portfolio">Portafolio</a></li>
+    <li><a href="#proceso" data-es="Proceso" data-en="Process">Proceso</a></li>
+    <li><a href="#sobre-mi" data-es="Sobre mí" data-en="About me">Sobre mí</a></li>
   </ul>
-  <a href="#contacto" class="nav-cta">Trabajemos juntos</a>
+  <a href="#contacto" class="nav-cta" data-es="Trabajemos juntos" data-en="Let's work together">Trabajemos juntos</a>
+  <button class="lang-toggle" id="langToggle" onclick="toggleLang()">EN</button>
 </nav>
 
 <!-- HERO -->
 <section class="hero">
   <div class="hero-left">
-    <p class="hero-eyebrow">Diseño Visual & Branding</p>
+    <p class="hero-eyebrow" data-es="Diseño Visual & Branding" data-en="Visual Design & Branding">Diseño Visual & Branding</p>
     <h1 class="hero-title">Imagen<br>que <em>vende.</em></h1>
-    <p class="hero-subtitle">Creo identidad visual estratégica para marcas que quieren ser recordadas.</p>
-    <p class="hero-desc">Creo sistemas visuales coherentes, desde el concepto hasta el punto de venta — incluyendo tu presencia completa en Amazon.</p>
+    <p class="hero-subtitle" data-es="Creo identidad visual estratégica para marcas que quieren ser recordadas." data-en="I create strategic visual identities for brands that want to be remembered.">Creo identidad visual estratégica para marcas que quieren ser recordadas.</p>
+    <p class="hero-desc" data-es="Creo sistemas visuales coherentes, desde el concepto hasta el punto de venta — incluyendo tu presencia completa en Amazon." data-en="I create cohesive visual systems, from concept to point of sale — including your complete Amazon presence.">Creo sistemas visuales coherentes, desde el concepto hasta el punto de venta — incluyendo tu presencia completa en Amazon.</p>
     <div class="hero-actions">
-      <a href="#contacto" class="btn-primary">Ver servicios</a>
-      <a href="#sobre-mi" class="btn-secondary">Conoce mi trabajo</a>
+      <a href="#contacto" class="btn-primary" data-es="Ver servicios" data-en="View services">Ver servicios</a>
+      <a href="#sobre-mi" class="btn-secondary" data-es="Conoce mi trabajo" data-en="See my work">Conoce mi trabajo</a>
     </div>
   </div>
 
@@ -1323,19 +1341,19 @@
     <div class="hero-metrics">
       <div class="metric">
         <span class="metric-num">100%</span>
-        <span class="metric-label">Estratégico</span>
+        <span class="metric-label" data-es="Estratégico" data-en="Strategic">Estratégico</span>
       </div>
       <div class="metric">
         <span class="metric-num">∞</span>
-        <span class="metric-label">Creatividad</span>
+        <span class="metric-label" data-es="Creatividad" data-en="Creativity">Creatividad</span>
       </div>
       <div class="metric">
         <span class="metric-num">5+</span>
-        <span class="metric-label">Años de exp.</span>
+        <span class="metric-label" data-es="Años de exp." data-en="Years of exp.">Años de exp.</span>
       </div>
       <div class="metric">
         <span class="metric-num">Amazon</span>
-        <span class="metric-label">Especialista</span>
+        <span class="metric-label" data-es="Especialista" data-en="Specialist">Especialista</span>
       </div>
     </div>
   </div>
@@ -1367,18 +1385,18 @@
 <section class="services" id="servicios">
   <div class="section-header fade-up">
     <div>
-      <p class="section-label">Lo que hago</p>
-      <h2 class="section-title">Servicios <em>de diseño</em></h2>
+      <p class="section-label" data-es="Lo que hago" data-en="What I do">Lo que hago</p>
+      <h2 class="section-title" data-es="Servicios de diseño" data-en="Design services">Servicios <em>de diseño</em></h2>
     </div>
-    <p class="section-intro">Cada proyecto que tomo parte de una estrategia clara. No solo hago que las cosas se vean bien — las hago funcionar.</p>
+    <p class="section-intro" data-es="Cada proyecto que tomo parte de una estrategia clara. No solo hago que las cosas se vean bien — las hago funcionar." data-en="Every project I take on starts from a clear strategy. I don't just make things look good — I make them work.">Cada proyecto que tomo parte de una estrategia clara. No solo hago que las cosas se vean bien — las hago funcionar.</p>
   </div>
 
   <div class="services-grid">
     <!-- Card 1 -->
     <div class="service-card fade-up">
       <p class="service-num">01 —</p>
-      <h3 class="service-name">Creación de Imagen Visual</h3>
-      <p class="service-desc">Desarrollo desde cero el sistema visual de tu marca: logotipo, tipografía, paleta de color y normas de uso para que tu identidad sea coherente en todos los puntos de contacto.</p>
+      <h3 class="service-name" data-es="Creación de Imagen Visual" data-en="Visual Identity Creation">Creación de Imagen Visual</h3>
+      <p class="service-desc" data-es="Desarrollo desde cero el sistema visual de tu marca: logotipo, tipografía, paleta de color y normas de uso para que tu identidad sea coherente en todos los puntos de contacto." data-en="I develop your brand's visual system from scratch: logo, typography, color palette and usage guidelines so your identity stays consistent across every touchpoint.">Desarrollo desde cero el sistema visual de tu marca: logotipo, tipografía, paleta de color y normas de uso para que tu identidad sea coherente en todos los puntos de contacto.</p>
       <div class="service-tags">
         <span>Logotipo</span>
         <span>Tipografía</span>
@@ -1390,8 +1408,8 @@
     <!-- Card 2 -->
     <div class="service-card fade-up">
       <p class="service-num">02 —</p>
-      <h3 class="service-name">Branding Estratégico</h3>
-      <p class="service-desc">La identidad visual como herramienta de negocio. Construyo una marca que conecta con tu cliente ideal, diferencia tu oferta y genera confianza desde el primer vistazo.</p>
+      <h3 class="service-name" data-es="Branding Estratégico" data-en="Strategic Branding">Branding Estratégico</h3>
+      <p class="service-desc" data-es="La identidad visual como herramienta de negocio. Construyo una marca que conecta con tu cliente ideal, diferencia tu oferta y genera confianza desde el primer vistazo." data-en="Visual identity as a business tool. I build a brand that connects with your ideal customer, differentiates your offer and generates trust from the very first glance.">La identidad visual como herramienta de negocio. Construyo una marca que conecta con tu cliente ideal, diferencia tu oferta y genera confianza desde el primer vistazo.</p>
       <div class="service-tags">
         <span>Posicionamiento</span>
         <span>Naming</span>
@@ -1403,8 +1421,8 @@
     <!-- Card 3 -->
     <div class="service-card fade-up">
       <p class="service-num">03 —</p>
-      <h3 class="service-name">Diseño de Packaging</h3>
-      <p class="service-desc">Diseño envases y empaques que seducen en el lineal y comunican los valores de tu marca. Del concepto a los archivos listos para imprenta, con total precisión técnica.</p>
+      <h3 class="service-name" data-es="Diseño de Packaging" data-en="Packaging Design">Diseño de Packaging</h3>
+      <p class="service-desc" data-es="Diseño envases y empaques que seducen en el lineal y comunican los valores de tu marca. Del concepto a los archivos listos para imprenta, con total precisión técnica." data-en="I design packaging that seduces on the shelf and communicates your brand's values. From concept to print-ready files, with full technical precision.">Diseño envases y empaques que seducen en el lineal y comunican los valores de tu marca. Del concepto a los archivos listos para imprenta, con total precisión técnica.</p>
       <div class="service-tags">
         <span>Etiquetas</span>
         <span>Cajas</span>
@@ -1417,9 +1435,9 @@
     <div class="service-card featured fade-up" id="amazon">
       <div>
         <p class="service-num" style="color:var(--muted);">04 —</p>
-        <span class="featured-badge">★ Especialidad</span>
+        <span class="featured-badge" data-es="★ Especialidad" data-en="★ Specialty">★ Especialidad</span>
         <h3 class="service-name" style="font-size:2rem;">Amazon<br><em>Visual</em></h3>
-        <p class="service-desc">Me especializo en el ecosistema visual completo para tu presencia en Amazon. Destacar en el marketplace más competitivo del mundo requiere diseño estratégico en cada píxel.</p>
+        <p class="service-desc" data-es="Me especializo en el ecosistema visual completo para tu presencia en Amazon. Destacar en el marketplace más competitivo del mundo requiere diseño estratégico en cada píxel." data-en="I specialize in the complete visual ecosystem for your Amazon presence. Standing out in the world's most competitive marketplace requires strategic design in every pixel.">Me especializo en el ecosistema visual completo para tu presencia en Amazon. Destacar en el marketplace más competitivo del mundo requiere diseño estratégico en cada píxel.</p>
         <div class="service-tags">
           <span>Imágenes de producto</span>
           <span>Infografías</span>
@@ -1429,18 +1447,18 @@
 
       <div class="featured-details">
         <h4 class="featured-detail-title">Amazon A+ Content</h4>
-        <p class="featured-detail-desc">Diseño módulos de contenido enriquecido que aumentan la conversión. Storytelling visual dentro del listing, con la estructura correcta para cada tipo de producto.</p>
+        <p class="featured-detail-desc" data-es="Diseño módulos de contenido enriquecido que aumentan la conversión. Storytelling visual dentro del listing, con la estructura correcta para cada tipo de producto." data-en="I design enriched content modules that boost conversion. Visual storytelling within the listing, with the right structure for each product type.">Diseño módulos de contenido enriquecido que aumentan la conversión. Storytelling visual dentro del listing, con la estructura correcta para cada tipo de producto.</p>
 
         <h4 class="featured-detail-title">Amazon Brand Store</h4>
-        <p class="featured-detail-desc">Tu tienda dentro de Amazon. Diseño la arquitectura, el flujo de navegación y todos los assets visuales para que tu Brand Store sea una experiencia de marca coherente y memorable.</p>
+        <p class="featured-detail-desc" data-es="Tu tienda dentro de Amazon. Diseño la arquitectura, el flujo de navegación y todos los assets visuales para que tu Brand Store sea una experiencia de marca coherente y memorable." data-en="Your store inside Amazon. I design the architecture, navigation flow and all visual assets so your Brand Store is a cohesive and memorable brand experience.">Tu tienda dentro de Amazon. Diseño la arquitectura, el flujo de navegación y todos los assets visuales para que tu Brand Store sea una experiencia de marca coherente y memorable.</p>
 
-        <h4 class="featured-detail-title">Concepto Visual de Imagen</h4>
-        <p class="featured-detail-desc">Antes de cualquier imagen, defino el universo visual: paleta, estilo fotográfico, tipografía, moodboard y las reglas que garantizan consistencia en todo tu catálogo.</p>
+        <h4 class="featured-detail-title" data-es="Concepto Visual de Imagen" data-en="Visual Image Concept">Concepto Visual de Imagen</h4>
+        <p class="featured-detail-desc" data-es="Antes de cualquier imagen, defino el universo visual: paleta, estilo fotográfico, tipografía, moodboard y las reglas que garantizan consistencia en todo tu catálogo." data-en="Before any image is made, I define the visual universe: palette, photography style, typography, moodboard and the rules that guarantee consistency across your entire catalog.">Antes de cualquier imagen, defino el universo visual: paleta, estilo fotográfico, tipografía, moodboard y las reglas que garantizan consistencia en todo tu catálogo.</p>
       </div>
 
       <div class="featured-details">
-        <h4 class="featured-detail-title">¿Por qué importa?</h4>
-        <p class="featured-detail-desc">En Amazon, la primera imagen decide si el cliente hace clic. El A+ Content que diseño puede aumentar la conversión hasta un 20%. Una Brand Store bien diseñada genera lealtad de marca más allá del precio.</p>
+        <h4 class="featured-detail-title" data-es="¿Por qué importa?" data-en="Why does it matter?">¿Por qué importa?</h4>
+        <p class="featured-detail-desc" data-es="En Amazon, la primera imagen decide si el cliente hace clic. El A+ Content que diseño puede aumentar la conversión hasta un 20%. Una Brand Store bien diseñada genera lealtad de marca más allá del precio." data-en="On Amazon, the first image decides if the customer clicks. The A+ Content I design can increase conversion by up to 20%. A well-designed Brand Store builds brand loyalty beyond price.">En Amazon, la primera imagen decide si el cliente hace clic. El A+ Content que diseño puede aumentar la conversión hasta un 20%. Una Brand Store bien diseñada genera lealtad de marca más allá del precio.</p>
         </div>
     </div>
   </div>
@@ -1450,10 +1468,10 @@
 <section class="portfolio" id="portafolio">
   <div class="section-header fade-up">
     <div>
-      <p class="section-label">Trabajos reales</p>
-      <h2 class="section-title">Porta<em>folio</em></h2>
+      <p class="section-label" data-es="Trabajos reales" data-en="Real work">Trabajos reales</p>
+      <h2 class="section-title" data-es="Portafolio" data-en="Portfolio">Porta<em>folio</em></h2>
     </div>
-    <p class="section-intro">Una selección de proyectos de identidad visual, branding, packaging y Amazon que he desarrollado para marcas reales.</p>
+    <p class="section-intro" data-es="Una selección de proyectos de identidad visual, branding, packaging y Amazon que he desarrollado para marcas reales." data-en="A selection of visual identity, branding, packaging and Amazon projects I've developed for real brands.">Una selección de proyectos de identidad visual, branding, packaging y Amazon que he desarrollado para marcas reales.</p>
   </div>
 
   <!-- Edit mode bar -->
@@ -1465,11 +1483,11 @@
 
   <!-- Filters -->
   <div class="portfolio-filters" id="portfolioFilters">
-    <button class="filter-btn active" onclick="filterPortfolio('all', this)">Todos</button>
+    <button class="filter-btn active" onclick="filterPortfolio('all', this)" data-es="Todos" data-en="All">Todos</button>
     <button class="filter-btn" onclick="filterPortfolio('branding', this)">Branding</button>
     <button class="filter-btn" onclick="filterPortfolio('packaging', this)">Packaging</button>
     <button class="filter-btn" onclick="filterPortfolio('amazon', this)">Amazon</button>
-    <button class="filter-btn" onclick="filterPortfolio('imagen', this)">Imagen Visual</button>
+    <button class="filter-btn" onclick="filterPortfolio('imagen', this)" data-es="Imagen Visual" data-en="Visual Identity">Imagen Visual</button>
     
   </div>
 
@@ -1638,35 +1656,35 @@
 <section class="process" id="proceso">
   <div class="section-header fade-up">
     <div>
-      <p class="section-label">Cómo trabajo</p>
-      <h2 class="section-title">El <em>proceso</em></h2>
+      <p class="section-label" data-es="Cómo trabajo" data-en="How I work">Cómo trabajo</p>
+      <h2 class="section-title" data-es="El proceso" data-en="The process">El <em>proceso</em></h2>
     </div>
-    <p class="section-intro">Trabajo con un método estructurado que elimina la incertidumbre y garantiza resultados alineados con tus objetivos de negocio.</p>
+    <p class="section-intro" data-es="Trabajo con un método estructurado que elimina la incertidumbre y garantiza resultados alineados con tus objetivos de negocio." data-en="I work with a structured method that eliminates uncertainty and guarantees results aligned with your business goals.">Trabajo con un método estructurado que elimina la incertidumbre y garantiza resultados alineados con tus objetivos de negocio.</p>
   </div>
 
   <div class="process-steps">
     <div class="process-step fade-up">
       <p class="step-num">01</p>
-      <h3 class="step-name">Descubrimiento</h3>
-      <p class="step-desc">Entiendo tu marca, tu cliente y tu competencia. Esta fase define la estrategia que guía todas mis decisiones de diseño.</p>
+      <h3 class="step-name" data-es="Descubrimiento" data-en="Discovery">Descubrimiento</h3>
+      <p class="step-desc" data-es="Entiendo tu marca, tu cliente y tu competencia. Esta fase define la estrategia que guía todas mis decisiones de diseño." data-en="I understand your brand, your customer and your competition. This phase defines the strategy that guides all my design decisions.">Entiendo tu marca, tu cliente y tu competencia. Esta fase define la estrategia que guía todas mis decisiones de diseño.</p>
       <span class="step-arrow">→</span>
     </div>
     <div class="process-step fade-up">
       <p class="step-num">02</p>
-      <h3 class="step-name">Concepto</h3>
-      <p class="step-desc">Traduzco la estrategia en propuestas visuales. Moodboards, referencias y la dirección creativa que tu marca necesita.</p>
+      <h3 class="step-name" data-es="Concepto" data-en="Concept">Concepto</h3>
+      <p class="step-desc" data-es="Traduzco la estrategia en propuestas visuales. Moodboards, referencias y la dirección creativa que tu marca necesita." data-en="I translate strategy into visual proposals. Moodboards, references and the creative direction your brand needs.">Traduzco la estrategia en propuestas visuales. Moodboards, referencias y la dirección creativa que tu marca necesita.</p>
       <span class="step-arrow">→</span>
     </div>
     <div class="process-step fade-up">
       <p class="step-num">03</p>
-      <h3 class="step-name">Diseño</h3>
-      <p class="step-desc">Desarrollo todos los elementos con precisión. Cada decisión está fundamentada en la estrategia y el concepto que hemos aprobado juntos.</p>
+      <h3 class="step-name" data-es="Diseño" data-en="Design">Diseño</h3>
+      <p class="step-desc" data-es="Desarrollo todos los elementos con precisión. Cada decisión está fundamentada en la estrategia y el concepto que hemos aprobado juntos." data-en="I develop all the elements with precision. Every decision is grounded in the strategy and concept we've agreed on together.">Desarrollo todos los elementos con precisión. Cada decisión está fundamentada en la estrategia y el concepto que hemos aprobado juntos.</p>
       <span class="step-arrow">→</span>
     </div>
     <div class="process-step fade-up">
       <p class="step-num">04</p>
-      <h3 class="step-name">Entrega</h3>
-      <p class="step-desc">Te entrego archivos organizados, listos para usar en todos los formatos que necesitas. Con guía de uso para que apliques todo correctamente.</p>
+      <h3 class="step-name" data-es="Entrega" data-en="Delivery">Entrega</h3>
+      <p class="step-desc" data-es="Te entrego archivos organizados, listos para usar en todos los formatos que necesitas. Con guía de uso para que apliques todo correctamente." data-en="I deliver organized files, ready to use in all the formats you need. With a usage guide so you can apply everything correctly.">Te entrego archivos organizados, listos para usar en todos los formatos que necesitas. Con guía de uso para que apliques todo correctamente.</p>
     </div>
   </div>
 </section>
@@ -1675,17 +1693,17 @@
 <section class="about" id="sobre-mi">
   <div class="about-visual fade-up">
     <div class="about-frame">
-      <p class="about-frame-label">Filosofía de diseño</p>
+      <p class="about-frame-label" data-es="Filosofía de diseño" data-en="Design philosophy">Filosofía de diseño</p>
       <blockquote class="about-quote">"El diseño que no <span>vende</span> no es buen diseño."</blockquote>
       <p class="about-name-big">KC</p>
     </div>
   </div>
   <div class="about-text fade-up">
-    <p class="section-label">Sobre mí</p>
-    <h2>Diseñadora que <em>entiende</em> tu negocio</h2>
-    <p>Soy Karina Castro, diseñadora visual especializada en crear sistemas de imagen que conectan marcas con sus clientes ideales. Trabajo con emprendedores, marcas consolidadas y vendedores de Amazon de todo el mundo.</p>
-    <p>Mi diferencial es combinar criterio estético con pensamiento estratégico. No diseño por diseñar — cada decisión que tomo tiene un porqué ligado a tus objetivos comerciales.</p>
-    <p>Con especial profundidad en el ecosistema Amazon, ayudo a marcas a construir una presencia visual coherente que convierte visitantes en compradores y compradores en fans.</p>
+    <p class="section-label" data-es="Sobre mí" data-en="About me">Sobre mí</p>
+    <h2 data-es="Diseñadora que entiende tu negocio" data-en="Designer who understands your business">Diseñadora que <em>entiende</em> tu negocio</h2>
+    <p data-es="Soy Karina Castro, diseñadora visual especializada en crear sistemas de imagen que conectan marcas con sus clientes ideales. Trabajo con emprendedores, marcas consolidadas y vendedores de Amazon de todo el mundo." data-en="I'm Karina Castro, a visual designer specialized in creating image systems that connect brands with their ideal clients. I work with entrepreneurs, established brands and Amazon sellers worldwide.">Soy Karina Castro, diseñadora visual especializada en crear sistemas de imagen que conectan marcas con sus clientes ideales. Trabajo con emprendedores, marcas consolidadas y vendedores de Amazon de todo el mundo.</p>
+    <p data-es="Mi diferencial es combinar criterio estético con pensamiento estratégico. No diseño por diseñar — cada decisión que tomo tiene un porqué ligado a tus objetivos comerciales." data-en="My differentiator is combining aesthetic judgment with strategic thinking. I don't design for the sake of it — every decision I make has a reason tied to your business goals.">Mi diferencial es combinar criterio estético con pensamiento estratégico. No diseño por diseñar — cada decisión que tomo tiene un porqué ligado a tus objetivos comerciales.</p>
+    <p data-es="Con especial profundidad en el ecosistema Amazon, ayudo a marcas a construir una presencia visual coherente que convierte visitantes en compradores y compradores en fans." data-en="With deep expertise in the Amazon ecosystem, I help brands build a cohesive visual presence that turns visitors into buyers and buyers into fans.">Con especial profundidad en el ecosistema Amazon, ayudo a marcas a construir una presencia visual coherente que convierte visitantes en compradores y compradores en fans.</p>
     <div class="about-skills">
       <span class="about-skill">Branding</span>
       <span class="about-skill">Packaging</span>
@@ -1701,22 +1719,22 @@
 
 <!-- CTA -->
 <section class="cta-section" id="contacto">
-  <p class="section-label" style="justify-content:center; margin-bottom:1.5rem;">Siguiente paso</p>
+  <p class="section-label" style="justify-content:center; margin-bottom:1.5rem;" data-es="Siguiente paso" data-en="Next step">Siguiente paso</p>
   <h2 class="cta-title">¿Listo para<br><span>crear algo</span><br>increíble?</h2>
   
-  <a href="mailto:karinacastronaya@gmail.com" class="cta-btn">Envíame un mensaje</a>
+  <a href="mailto:karinacastronaya@gmail.com" class="cta-btn" data-es="Envíame un mensaje" data-en="Send me a message">Envíame un mensaje</a>
   <a href="mailto:karinacastronaya@gmail.com" class="cta-email">karinacastronaya@gmail.com</a>
 </section>
 
 <!-- FOOTER -->
 <footer>
   <span class="footer-logo">Karina Castro</span>
-  <span class="footer-copy">© 2025 Karina Castro. Todos los derechos reservados.</span>
+  <span class="footer-copy" data-es="© 2025 Karina Castro. Todos los derechos reservados." data-en="© 2025 Karina Castro. All rights reserved.">© 2025 Karina Castro. Todos los derechos reservados.</span>
   <ul class="footer-links">
-    <li><a href="#servicios">Servicios</a></li>
-    <li><a href="#portafolio">Portafolio</a></li>
-    <li><a href="#proceso">Proceso</a></li>
-    <li><a href="#sobre-mi">Sobre mí</a></li>
+    <li><a href="#servicios" data-es="Servicios" data-en="Services">Servicios</a></li>
+    <li><a href="#portafolio" data-es="Portafolio" data-en="Portfolio">Portafolio</a></li>
+    <li><a href="#proceso" data-es="Proceso" data-en="Process">Proceso</a></li>
+    <li><a href="#sobre-mi" data-es="Sobre mí" data-en="About me">Sobre mí</a></li>
     <li><a href="#contacto">Contacto</a></li>
   </ul>
 </footer>
@@ -1884,6 +1902,43 @@
       a.style.color = a.getAttribute('href') === '#' + current ? 'var(--ink)' : '';
     });
   });
+
+  // ── LANGUAGE SWITCHER ──
+  let currentLang = 'es';
+
+  function toggleLang() {
+    currentLang = currentLang === 'es' ? 'en' : 'es';
+    applyLang(currentLang);
+    const btn = document.getElementById('langToggle');
+    btn.textContent = currentLang === 'es' ? 'EN' : 'ES';
+    btn.classList.toggle('active-en', currentLang === 'en');
+    document.getElementById('html-root').lang = currentLang;
+    // persist
+    try { localStorage.setItem('kc-lang', currentLang); } catch(e) {}
+  }
+
+  function applyLang(lang) {
+    document.querySelectorAll('[data-es][data-en]').forEach(el => {
+      const text = el.getAttribute('data-' + lang);
+      if (text !== null) el.innerHTML = text;
+    });
+    // Update nav-cta separately (it has both data attrs)
+    document.querySelectorAll('.nav-cta[data-es][data-en]').forEach(el => {
+      el.textContent = el.getAttribute('data-' + lang);
+    });
+    // CTA title special (has <br> and <span>)
+    const ctaTitle = document.querySelector('.cta-title[data-es][data-en]');
+    if (ctaTitle) ctaTitle.innerHTML = ctaTitle.getAttribute('data-' + lang);
+  }
+
+  // Init
+  document.addEventListener('DOMContentLoaded', function() {
+    try {
+      const saved = localStorage.getItem('kc-lang');
+      if (saved && saved !== 'es') { currentLang = saved; applyLang(saved); document.getElementById('langToggle').textContent = 'ES'; document.getElementById('langToggle').classList.add('active-en'); }
+    } catch(e) {}
+  });
+
 </script>
 </body>
 </html>
